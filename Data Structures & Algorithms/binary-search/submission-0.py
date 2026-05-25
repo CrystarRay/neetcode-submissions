@@ -1,0 +1,20 @@
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        """
+        nums = [-1,0,2,4,6,8]
+        mid 
+        
+        """
+
+        left = 0
+        right = len(nums) - 1
+
+        while left <= right:
+            mid = left + ((right - left)//2)
+            if nums[mid] > target:
+                right = mid - 1
+            elif nums[mid] < target:
+                left = mid + 1
+            else:
+                return mid
+        return -1
